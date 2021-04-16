@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-PATH = 'content'
-TIMEZONE = 'Asia/Tokyo'
-DEFAULT_LANG = 'ja'
+TIMEZONE = "Asia/Tokyo"
+DEFAULT_LANG = "ja"
 DEFAULT_PAGINATION = 10
+
+AUTHOR = "liqsuq"
+SITEURL = ""
+SITENAME = "rkgknet"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -23,17 +26,36 @@ AUTHOR_FEED_RSS = None
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
 
+
+PATH = "content"
+ARTICLE_PATHS = ["articles"]
+ARTICLE_URL = "articles/{slug}.html"
+ARTICLE_SAVE_AS = "articles/{slug}.html"
+ARTICLE_LANG_URL = "articles/{slug}.html"
+ARTICLE_LANG_SAVE_AS = "articles/{slug}.html"
+FILENAME_METADATA = r"(?P<date>\d{4}\d{2}\d{2})_(?P<slug>.*)"
+USE_FOLDER_AS_CATEGORY = True
+DEFAULT_CATEGORY = "misc"
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
-THEME = 'theme/Flex'
+
+MARKDOWN = {
+    "extension_configs": {
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
+        "markdown.extensions.extra": {},
+        "markdown.extensions.meta": {},
+        "markdown.extensions.toc": {},
+        "markdown.extensions.admonition": {},
+        "markdown.extensions.nl2br": {},
+        "mdx_linkify.mdx_linkify": {},
+        "markdown_del_ins": {},
+    },
+    "output_format": "html5",
+}
 
 # Flex
-AUTHOR = "liqsuq"
-SITEURL = ""
-SITENAME = "rkgknet"
+THEME = 'themes/Flex'
 SITETITLE = "rkgknet"
 SITESUBTITLE = "ネット出張らくがき帳"
 SITEDESCRIPTION = "ネット出張らくがき帳"
@@ -58,6 +80,20 @@ COPYRIGHT_YEAR = 2021
 # CUSTOM_CSS = "static/custom.css"
 
 MAIN_MENU = True
+MENUITEMS = (
+    ("Categories", "/categories.html"),
+    ("Archives", "/archives.html"),
+)
+
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = [
+    "related_posts",
+    "tipue_search",
+    "neighbors",
+    "sitemap",
+]
+
+SITEMAP = {"format": "xml"}
 
 # ADD_THIS_ID = "ra-77hh6723hhjd"
 # DISQUS_SITENAME = "yoursite"
@@ -69,25 +105,8 @@ MAIN_MENU = True
 # Enable Jinja2 i18n extension used to parse translations.
 # JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
 
-# Translate to German.
-DEFAULT_LANG = "ja"
-# OG_LOCALE = "de_DE"
-# LOCALE = "de_DE"
-
 # Default theme language.
 # I18N_TEMPLATES_LANG = "en"
+PYGMENTS_STYLE = "monokai"
 
 
-MARKDOWN = {
-    'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight'},
-        'markdown.extensions.extra': {},
-        'markdown.extensions.meta': {},
-        'markdown.extensions.toc': {},
-        'markdown.extensions.admonition': {},
-    },
-    'output_format': 'html5',
-}
-
-FILENAME_META = r"(?P<date>\d{4}\d{2}\d{2})_(?P<slug>.*)"
-ARTICLE_PATHS = ["articles"]

@@ -1,8 +1,4 @@
-Title: "jounald/journalctlの使い方"
-Date: 2020-02-11
-Category: Linux
-Slug: journalctl-usage
-Authors: liqsuq
+Title: jounald/journalctlの使い方
 
 journalctlが便利すぎた。dmesg使ったり/var/log/messages(もしくはsyslog)を見てたのが何だったのかと思う程。
 具体的には`journalctl -b -o short-monotonic -p err`で今回のブートで(僕基準で)注視すべきログが抽出される>。
