@@ -1,8 +1,5 @@
 # liqsuq.github.io
 
-# インストールメモ
-Ubuntu：
-
 ```
 $ sudo apt-get install ruby-full build-essential zlib1g-dev
 $ echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
@@ -19,7 +16,10 @@ $ jekyll new --skip-bundle .
 ```
 
 Gemfileの`gem "jekyll"...`をコメントアウト・`gem "github-pages"...`をコメント解除・`gem "no-style-please"`を追加
-\_config.ymlを`theme: no-style-please`に変更
 
 ```
 $ bundle install
+```
+
+
+\_config.ymlを`theme: no-style-please`に変更・`plugins:`に`- jekyll-remote-theme`を追加

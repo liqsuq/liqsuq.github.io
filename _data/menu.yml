@@ -1,0 +1,7 @@
+entries:
+  - title: about
+    url: about
+  - title: posts
+    post_list: true
+  - title: rss
+    url: feed.xml
